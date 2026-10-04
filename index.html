@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin etika</title>
+<style>
+:root{
+  --fond:#eef0ee; --surface:#fbfbf9; --encre:#1c2421; --discret:#5d6862;
+  --trait:#d3d8d4; --accent:#b8321f; --accent-texte:#fff;
+  --ok:#2f6b4f; --attention:#9a6a00;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --fond:#141a17; --surface:#1c2421; --encre:#eceeea; --discret:#9aa59e;
+    --trait:#2f3a35; --accent:#e5604a; --accent-texte:#141a17; --ok:#6fc29a; --attention:#e0b04a;
+  }
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--fond);color:var(--encre);
+  font:16px/1.5 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1rem 3rem}
+h1{font-size:1.75rem;line-height:1.15;margin:0 0 .25rem;letter-spacing:-.01em}
+.sous-titre{margin:0 0 1.75rem;color:var(--discret)}
+ul{list-style:none;margin:0;padding:0;background:var(--surface);border:1px solid var(--trait);border-radius:10px}
+li{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem;padding:.9rem 1rem;border-top:1px solid var(--trait)}
+li:first-child{border-top:0}
+.id{flex:1 1 12rem;min-width:0}
+.nom{font-weight:650;font-size:1.05rem}
+.domaine{display:block;color:var(--discret);font-size:.875rem;overflow-wrap:anywhere}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem}
+a.btn,span.btn{display:inline-flex;align-items:center;min-height:2.5rem;padding:0 .9rem;border-radius:7px;
+  font-size:.9375rem;text-decoration:none;border:1px solid var(--trait);color:var(--encre)}
+a.btn:hover{border-color:var(--encre)}
+a.admin{background:var(--accent);border-color:var(--accent);color:var(--accent-texte);font-weight:600}
+a.admin:hover{filter:brightness(1.08);border-color:var(--accent)}
+a.btn:focus-visible{outline:3px solid var(--encre);outline-offset:2px}
+span.btn{border-style:dashed;color:var(--discret)}
+.etat{font-size:.8125rem;color:var(--attention)}
+.vide{padding:1rem;color:var(--discret)}
+</style>
+</head>
+<body>
+<main>
+  <h1>Admin etika</h1>
+  <p class="sous-titre">Accès aux pages d'administration de toutes les applications.</p>
+  <ul id="liste" aria-live="polite"><li class="vide">Chargement…</li></ul>
+</main>
+<script>
+const ETATS = { a_verifier: "Lien à vérifier" };
+function ligne(app){
+  const li = document.createElement("li");
+  const id = document.createElement("div"); id.className = "id";
+  const nom = document.createElement("span"); nom.className = "nom"; nom.textContent = app.nom;
+  const dom = document.createElement("span"); dom.className = "domaine";
+  try { dom.textContent = new URL(app.url).host; } catch { dom.textContent = app.url; }
+  id.append(nom, dom);
+
+  const actions = document.createElement("div"); actions.className = "actions";
+  if (ETATS[app.statut]) {
+    const e = document.createElement("span"); e.className = "etat"; e.textContent = ETATS[app.statut];
+    actions.append(e);
+  }
+  const ouvrir = document.createElement("a");
+  ouvrir.className = "btn"; ouvrir.href = app.url; ouvrir.textContent = "Ouvrir l'app";
+  ouvrir.target = "_blank"; ouvrir.rel = "noopener noreferrer";
+  actions.append(ouvrir);
+
+  if (app.admin) {
+    const a = document.createElement("a");
+    a.className = "btn admin"; a.href = app.admin; a.textContent = "Ouvrir l'admin";
+    a.target = "_blank"; a.rel = "noopener noreferrer";
+    actions.append(a);
+  } else {
+    const s = document.createElement("span"); s.className = "btn"; s.textContent = "Admin à définir";
+    actions.append(s);
+  }
+  li.append(id, actions);
+  return li;
+}
+fetch("apps.json", { cache: "no-store" })
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(apps => {
+    const ul = document.getElementById("liste");
+    ul.replaceChildren(...apps.map(ligne));
+  })
+  .catch(() => {
+    document.getElementById("liste").innerHTML =
+      '<li class="vide">Impossible de charger apps.json. Vérifie que le fichier est publié à côté de index.html.</li>';
+  });
+</script>
+</body>
+</html>
