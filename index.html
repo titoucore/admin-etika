@@ -4,72 +4,110 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<title>Admin etika</title>
+<meta name="theme-color" content="#211e1f">
+<meta name="color-scheme" content="dark">
+<title>Etika Atelier</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAADJUlEQVR42u2bPY9TVxCGn5m712tWRgaJhIINaEMXpUIREvyBKE0QEqSkI3X+QIpIqVJAlZYfEAkKqmwk0kRKx0ePkoBglRRAxLLeu76+57wpfNfaDc4Hwr7eXZ+RXJxjS9Y8fufMnDtjWzl5SsyxOXNuCUACkAAkAAnAPNtCk19mgICPyLmkJY7hbBK5Q5/btjX6nA4iAMeIiDPK+cIOE0yUEh0zrniHxWh8R4E3DKCxEBDCzbhIGwO2FDEgCP4MFZ/Q5jhOrJVyoABsS78jOIpTSFjtpgEBkZuzTDZSy4E8BAugILJgvBbvknher9RgEHgz8h/+qgPEHSs54gtkQKzfezdrcVd9HlPh9f6BOwQjwoDv6XMovuJj2iyZUynyYyy4YUXjGQDAZnUd7uIcJ2OdyB+E+agDdqbEl0Re1mK3GeT/mQLYDgfDUKNHXgMAzAxp6KBj/+mc1QlxViAmDkDSSM7hDV2yGYTBxAG8t7zMk6dP6ZhzWhlB/1bZCdzYklgjsDkDDUwcwOXLn3Ht+jXet5wvOUyPuKvY8LFnArxQ4BvbYI3QaC0wlTNgnLTdDCQ2FHbsDkUQgOUs52R01giNBsPEAdy8dQuAX1XxNetUCMfoCD5QznlaRETcoQYh+hKVGr4JTQPAo0e/AbChwIO/FTg/W8lDBnxOh57CLm+9ed+ncxdw95HAMwyvX5mGafEnSn5XRcucvdCRmbgCYozj06ANdw0oJDIzyno9S2v8meBe68Olp8IJQAKQACQACUACkAAkAAlAApAAJAAJQAKQACQACUACkAAkAG9rNu8AtI/gTaU5uiLnKh36/zD2+A5Oqd1d4+0GqoAFAdtNVhvOHGi/AJDEWbX4MFvkeRyQjQFQWtzlkAGVxDnl3LMBpWkycpoFgG63y9KLPhsehi2wMR74a2ujp8gZW+SrmPGLBTaJRETbM1arHs/aOYPBYO8D+PTCBZ59e4PFo108Vv977NWBQpETnrFiOcZwmOpI1uJ+2WO91dofAH5YXeXYoZwiVG888+tAX6JQNVK/GFBNMRIs/W8wFUIJQAKQACQACcDc2l9huyfKZ3D6dgAAAABJRU5ErkJggg==">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Zilla+Slab:wght@600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --fond:#eef0ee; --surface:#fbfbf9; --encre:#1c2421; --discret:#5d6862;
-  --trait:#d3d8d4; --accent:#b8321f; --accent-texte:#fff;
-  --ok:#2f6b4f; --attention:#9a6a00;
+  --charbon:#211e1f;      /* fond du logo */
+  --surface:#2a2627;
+  --blanc:#ffffff;
+  --gris:#b3adae;
+  --trait:#413c3d;
+  --cramoisi:#be1e2f;     /* rouge du i */
+  --cramoisi-clair:#e24a59;
+  --slab:"Zilla Slab","Rockwell","Roboto Slab",Georgia,serif;
+  --condense:"Barlow Semi Condensed","Arial Narrow","Roboto Condensed",system-ui,sans-serif;
+  color-scheme:dark;
   box-sizing:border-box;
-  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --fond:#141a17; --surface:#1c2421; --encre:#eceeea; --discret:#9aa59e;
-    --trait:#2f3a35; --accent:#e5604a; --accent-texte:#141a17; --ok:#6fc29a; --attention:#e0b04a;
-  }
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
 }
 *,*::before,*::after{box-sizing:inherit}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:var(--fond);color:var(--encre);
-  font:16px/1.5 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-main{max-width:46rem;margin:0 auto;padding:2rem 1rem 3rem}
-h1{font-size:1.75rem;line-height:1.15;margin:0 0 .25rem;letter-spacing:-.01em}
-.sous-titre{margin:0 0 1.75rem;color:var(--discret)}
-ul{list-style:none;margin:0;padding:0;background:var(--surface);border:1px solid var(--trait);border-radius:10px}
-li{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem;padding:.9rem 1rem;border-top:1px solid var(--trait)}
-li:first-child{border-top:0}
-.id{flex:1 1 12rem;min-width:0}
-.nom{font-weight:650;font-size:1.05rem}
-.domaine{display:block;color:var(--discret);font-size:.875rem;overflow-wrap:anywhere}
-.actions{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem}
-a.btn,span.btn{display:inline-flex;align-items:center;min-height:2.5rem;padding:0 .9rem;border-radius:7px;
-  font-size:.9375rem;text-decoration:none;border:1px solid var(--trait);color:var(--encre)}
-a.btn:hover{border-color:var(--encre)}
-a.admin{background:var(--accent);border-color:var(--accent);color:var(--accent-texte);font-weight:600}
-a.admin:hover{filter:brightness(1.08);border-color:var(--accent)}
-a.btn:focus-visible{outline:3px solid var(--encre);outline-offset:2px}
-span.btn{border-style:dashed;color:var(--discret)}
-.etat{font-size:.8125rem;color:var(--attention)}
-.vide{padding:1rem;color:var(--discret)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--charbon)}
+body{margin:0;background:var(--charbon);color:var(--blanc);
+  font:1.0625rem/1.5 var(--condense);font-weight:500;-webkit-text-size-adjust:100%}
+main{max-width:44rem;margin:0 auto;padding:2.5rem 1.25rem 4rem}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* En-tête : le logo, puis la mention qui remplace « immo » */
+.logo{display:block;width:min(20rem,78%);height:auto;margin:0 auto}
+.mention{display:flex;align-items:center;gap:1rem;margin:1.25rem 7% 0 5.3%}
+.mention .regle{height:3px;background:var(--blanc);transform-origin:left}
+.mention .regle.longue{flex:1}
+.mention .regle.courte{width:2.75rem}
+.mention .mot{font-weight:600;font-size:1.25rem;letter-spacing:.32em;text-transform:uppercase;
+  line-height:1;margin-right:-.32em}
+.mention .mot b{color:var(--cramoisi-clair);font-weight:600}
+@media (prefers-reduced-motion:no-preference){
+  .mention .regle{animation:trace .7s cubic-bezier(.2,.7,.2,1) both}
+  .mention .regle.courte{animation-delay:.25s}
+  @keyframes trace{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+}
+
+.intro{margin:3rem 0 .75rem;color:var(--gris)}
+
+/* Liste des applications */
+#liste{list-style:none;margin:0;padding:0;border-top:1px solid var(--trait)}
+#liste li{display:grid;grid-template-columns:1fr;gap:.9rem;padding:1.25rem 0;border-bottom:1px solid var(--trait)}
+.nom{display:block;font-family:var(--slab);font-weight:600;font-size:1.9rem;line-height:1.1;letter-spacing:.005em}
+.domaine{display:block;margin-top:.2rem;color:var(--gris);font-size:.95rem;overflow-wrap:anywhere}
+.alerte{display:inline-flex;align-items:center;gap:.4rem;margin-top:.45rem;font-size:.9rem;color:var(--gris)}
+.alerte::before{content:"";width:.6rem;height:.6rem;border-radius:50%;background:var(--cramoisi-clair)}
+.actions{display:flex;flex-wrap:wrap;gap:.6rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:2.75rem;padding:0 1.1rem;
+  border-radius:4px;border:1px solid #6a6465;color:var(--blanc);font:inherit;font-weight:600;text-decoration:none}
+a.btn:hover{border-color:var(--blanc)}
+a.btn.admin{background:var(--cramoisi);border-color:var(--cramoisi)}
+a.btn.admin:hover{background:#d3283a;border-color:#d3283a}
+a.btn:focus-visible{outline:3px solid var(--blanc);outline-offset:3px}
+span.btn{border-style:dashed;border-color:#5a5455;color:var(--gris);font-weight:500}
+.vide{display:block !important;padding:1.25rem 0;color:var(--gris)}
+
+@media (min-width:36rem){
+  #liste li{grid-template-columns:1fr auto;align-items:center;gap:1.5rem}
+  .actions{justify-content:flex-end}
+}
 </style>
 </head>
 <body>
 <main>
-  <h1>Admin etika</h1>
-  <p class="sous-titre">Accès aux pages d'administration de toutes les applications.</p>
+  <header>
+    <h1 class="sr-only">Etika Atelier : administration des applications</h1>
+    <img class="logo" alt="etika" width="720" height="302" src="data:image/png;base64,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">
+    <div class="mention" aria-hidden="true">
+      <span class="regle longue"></span>
+      <span class="mot">ATEL<b>I</b>ER</span>
+      <span class="regle courte"></span>
+    </div>
+  </header>
+
+  <p class="intro" id="intro">Pages d'administration de toutes les applications.</p>
   <ul id="liste" aria-live="polite"><li class="vide">Chargement…</li></ul>
 </main>
 <script>
-const ETATS = { a_verifier: "Lien à vérifier" };
 function ligne(app){
   const li = document.createElement("li");
-  const id = document.createElement("div"); id.className = "id";
+
+  const id = document.createElement("div");
   const nom = document.createElement("span"); nom.className = "nom"; nom.textContent = app.nom;
   const dom = document.createElement("span"); dom.className = "domaine";
   try { dom.textContent = new URL(app.url).host; } catch { dom.textContent = app.url; }
   id.append(nom, dom);
+  if (app.statut === "a_verifier") {
+    const al = document.createElement("span"); al.className = "alerte"; al.textContent = "Lien admin à vérifier";
+    id.append(al);
+  }
 
   const actions = document.createElement("div"); actions.className = "actions";
-  if (ETATS[app.statut]) {
-    const e = document.createElement("span"); e.className = "etat"; e.textContent = ETATS[app.statut];
-    actions.append(e);
-  }
   const ouvrir = document.createElement("a");
   ouvrir.className = "btn"; ouvrir.href = app.url; ouvrir.textContent = "Ouvrir l'app";
   ouvrir.target = "_blank"; ouvrir.rel = "noopener noreferrer";
   actions.append(ouvrir);
-
   if (app.admin) {
     const a = document.createElement("a");
     a.className = "btn admin"; a.href = app.admin; a.textContent = "Ouvrir l'admin";
@@ -85,8 +123,10 @@ function ligne(app){
 fetch("apps.json", { cache: "no-store" })
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
   .then(apps => {
-    const ul = document.getElementById("liste");
-    ul.replaceChildren(...apps.map(ligne));
+    document.getElementById("liste").replaceChildren(...apps.map(ligne));
+    const n = apps.length, a = apps.filter(x => x.admin).length;
+    document.getElementById("intro").textContent =
+      n + " applications, " + a + " pages d'administration renseignées.";
   })
   .catch(() => {
     document.getElementById("liste").innerHTML =
