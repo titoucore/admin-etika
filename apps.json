@@ -1,10 +1,20 @@
 [
-  { "nom": "Hitza",     "url": "https://hitza.etika.eus/",     "admin": null,                                          "statut": "a_definir" },
-  { "nom": "Ikasi",     "url": "https://ikasi.etika.eus/",     "admin": "https://ikasi.etika.eus/admin",               "statut": "ok" },
-  { "nom": "Accession", "url": "https://accession.etika.eus/", "admin": null,                                          "statut": "a_definir" },
-  { "nom": "Oinarri",   "url": "https://oinarri.etika.eus/",   "admin": "https://oinarri.etika.eus/admin/",            "statut": "ok" },
-  { "nom": "Kodea",     "url": "https://kodea.etika.eus/",     "admin": null,                                          "statut": "a_definir" },
-  { "nom": "Zeregin",   "url": "https://zeregin.etika.eus/",   "admin": "https://zeregin.etika.eus/admin",             "statut": "ok" },
-  { "nom": "Mythika",   "url": "https://mythika.etika.eus/",   "admin": "https://mythika.etika.eus/admin/profils",     "statut": "a_verifier" },
-  { "nom": "Merkatu",   "url": "https://merkatu.etika.eus/",   "admin": "https://merkatu.etika.eus/parametres/utilisateurs", "statut": "a_verifier" }
+  { "nom": "Hitza",     "url": "https://hitza.etika.eus/",     "admin": "https://hitza.etika.eus/admin/utilisateurs", "statut": "ok" },
+  { "nom": "Ikasi",     "url": "https://ikasi.etika.eus/",     "admin": "https://ikasi.etika.eus/admin", "statut": "ok",
+    "sous_pages": [
+      { "label": "Utilisateurs", "url": "https://ikasi.etika.eus/admin/utilisateurs" },
+      { "label": "Fiches",       "url": "https://ikasi.etika.eus/admin/fiches" }
+    ] },
+  { "nom": "Accession", "url": "https://accession.etika.eus/", "admin": null, "statut": "a_definir" },
+  { "nom": "Oinarri",   "url": "https://oinarri.etika.eus/",   "admin": "https://oinarri.etika.eus/admin", "statut": "ok" },
+  { "nom": "Kodea",     "url": "https://kodea.etika.eus/",     "admin": "https://kodea.etika.eus/admin", "statut": "ok",
+    "sous_pages": [
+      { "label": "Utilisateurs", "url": "https://kodea.etika.eus/admin/utilisateurs" }
+    ] },
+  { "nom": "Zeregin",   "url": "https://zeregin.etika.eus/",   "admin": "https://zeregin.etika.eus/admin", "statut": "ok" },
+  { "nom": "Mythika",   "url": "https://mythika.etika.eus/",   "admin": "https://mythika.etika.eus/admin/profils", "statut": "ok",
+    "sous_pages": [
+      { "label": "Appareils", "url": "https://mythika.etika.eus/admin/appareils" }
+    ] },
+  { "nom": "Merkatu",   "url": "https://merkatu.etika.eus/",   "admin": "https://merkatu.etika.eus/parametres/utilisateurs", "statut": "ok" }
 ]
