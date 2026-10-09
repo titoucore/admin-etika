@@ -107,6 +107,18 @@ function ligne(app){
     id.append(al);
   }
 
+  if (app.sous_pages && app.sous_pages.length) {
+    const nav = document.createElement("span"); nav.className = "sous";
+    const t = document.createElement("span"); t.textContent = "Autres pages admin :";
+    nav.append(t);
+    for (const p of app.sous_pages) {
+      const a = document.createElement("a"); a.href = p.url; a.textContent = p.label;
+      a.target = "_blank"; a.rel = "noopener noreferrer";
+      nav.append(a);
+    }
+    id.append(nav);
+  }
+
   const actions = document.createElement("div"); actions.className = "actions";
   const ouvrir = document.createElement("a");
   ouvrir.className = "btn"; ouvrir.href = app.url; ouvrir.textContent = "Ouvrir l'app";
