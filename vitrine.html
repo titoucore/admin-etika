@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#211e1f">
+<meta name="color-scheme" content="dark">
+<title>etika · Applications web conçues au Pays basque</title>
+<meta name="description" content="etika, marque de la SASU Baaaas : applications web sobres pour le travail, l'apprentissage et l'organisation, conçues à Ahetze, au Pays basque.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23211e1f'/%3E%3Crect x='14' y='13' width='4' height='12' fill='%23fff'/%3E%3Crect x='14' y='7' width='4' height='4' fill='%23be1e2f'/%3E%3C/svg%3E">
+<style>
+:root{
+  --charbon:#211e1f; --surface:#2a2627; --blanc:#fff; --gris:#b3adae; --trait:#413c3d;
+  --cramoisi:#be1e2f; --cramoisi-clair:#e24a59;
+  --slab:"Rockwell","Roboto Slab","Zilla Slab",Georgia,serif;
+  --condense:"Avenir Next Condensed","Arial Narrow","Roboto Condensed",system-ui,sans-serif;
+  color-scheme:dark; box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{background:var(--charbon)}
+body{margin:0;background:var(--charbon);color:var(--blanc);font:1.0625rem/1.55 var(--condense);font-weight:500;-webkit-text-size-adjust:100%}
+main{max-width:44rem;margin:0 auto;padding:3rem 1.25rem 2rem}
+a{color:var(--blanc);text-decoration-color:var(--cramoisi-clair);text-underline-offset:.22em}
+a:focus-visible{outline:3px solid var(--blanc);outline-offset:3px}
+.marque{font-family:var(--slab);font-weight:700;font-size:clamp(3.5rem,14vw,5.5rem);line-height:1;letter-spacing:-.01em;margin:0}
+.marque b{color:var(--cramoisi-clair);font-weight:700}
+.devise{display:flex;align-items:center;gap:1rem;margin:1rem 0 0}
+.devise .regle{height:3px;width:2.75rem;background:var(--blanc)}
+.devise span{font-weight:600;letter-spacing:.28em;text-transform:uppercase;font-size:1rem}
+.intro{margin:2.5rem 0 1rem;color:var(--gris);max-width:36rem}
+h2{font-size:.95rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gris);margin:2.5rem 0 .5rem}
+ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--trait)}
+li{padding:1.1rem 0;border-bottom:1px solid var(--trait)}
+.nom{font-family:var(--slab);font-weight:700;font-size:1.6rem;line-height:1.15;text-decoration:none}
+.nom:hover{text-decoration:underline}
+.desc{display:block;margin-top:.2rem;color:var(--gris)}
+.domaine{display:block;font-size:.9rem;color:var(--gris);opacity:.8}
+footer{max-width:44rem;margin:0 auto;padding:1.5rem 1.25rem 3rem;color:var(--gris);font-size:.95rem;border-top:1px solid var(--trait)}
+footer p{margin:.3rem 0}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1 class="marque">et<b>i</b>ka</h1>
+    <p class="devise"><span class="regle" aria-hidden="true"></span><span>Applications web</span></p>
+  </header>
+
+  <p class="intro">
+    etika regroupe des applications web sobres, pour le travail, l'apprentissage et l'organisation,
+    conçues et développées à Ahetze, au Pays basque. Chaque application est accessible sur compte ;
+    aucune ne collecte de données en dehors des comptes de ses utilisateurs.
+  </p>
+
+  <h2>Les applications</h2>
+  <ul>
+    <li><a class="nom" href="https://merkatu.etika.eus/">Merkatu</a>
+      <span class="desc">Suivi d'opérations pour les marchands de biens : bilans, trésorerie, prospection à partir de données publiques.</span>
+      <span class="domaine">merkatu.etika.eus</span></li>
+    <li><a class="nom" href="https://zeregin.etika.eus/">Zeregin</a>
+      <span class="desc">Notes et tâches, rangées par espaces.</span>
+      <span class="domaine">zeregin.etika.eus</span></li>
+    <li><a class="nom" href="https://hitza.etika.eus/">Hitza</a>
+      <span class="desc">Le dictionnaire qui grandit avec toi : termes et définitions, personnels ou partagés.</span>
+      <span class="domaine">hitza.etika.eus</span></li>
+    <li><a class="nom" href="https://ikasi.etika.eus/">Ikasi</a>
+      <span class="desc">Le basque, pas à pas : fiches de cours et révision par cartes.</span>
+      <span class="domaine">ikasi.etika.eus</span></li>
+    <li><a class="nom" href="https://kodea.etika.eus/">Kodea</a>
+      <span class="desc">Apprendre à écrire du code, notion par notion : HTML, CSS, puis JavaScript.</span>
+      <span class="domaine">kodea.etika.eus</span></li>
+    <li><a class="nom" href="https://oinarri.etika.eus/">Oinarri</a>
+      <span class="desc">Formation en ligne sur le bâtiment, la promotion immobilière et le logement social, en partant de zéro.</span>
+      <span class="domaine">oinarri.etika.eus</span></li>
+    <li><a class="nom" href="https://mythika.etika.eus/">Mythika</a>
+      <span class="desc">Découvrir la mythologie grecque : dieux, héros et récits.</span>
+      <span class="domaine">mythika.etika.eus</span></li>
+  </ul>
+</main>
+<footer>
+  <p>etika est une marque de la SASU Baaaas, Ahetze (Pyrénées-Atlantiques).</p>
+  <p>Contact : <a href="mailto:contact@etika.eus">contact@etika.eus</a> · <a href="/mentions-legales">Mentions légales</a></p>
+</footer>
+</body>
+</html>

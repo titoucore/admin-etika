@@ -1,0 +1,15 @@
+{
+  // Worker de la marque etika (28/10/2026) : vitrine publique sur etika.eus, page d'admin sur
+  // etika.eus/admin/ (protégée par Cloudflare Access) et, en transition, sur admin.etika.eus.
+  // Le script src/worker.js distribue les fichiers et refuse tout le reste.
+  "name": "admin-etika",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "html_handling": "none",
+    "not_found_handling": "none"
+  }
+}

@@ -1,0 +1,4 @@
+Contact: mailto:contact@etika.eus
+Expires: 2027-10-28T00:00:00.000Z
+Preferred-Languages: fr, en
+Canonical: https://etika.eus/.well-known/security.txt
