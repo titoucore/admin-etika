@@ -80,10 +80,10 @@ export default {
     }
     const p = url.pathname;
 
-    // Transition : admin.etika.eus garde exactement son comportement d'avant.
+    // admin.etika.eus (28/10/2026) : ancienne adresse de l'admin, simple redirection vers
+    // etika.eus/admin/ (protégée par Cloudflare Access). À retirer dans quelques mois.
     if (url.hostname === ADMIN_HOST) {
-      if (p === "/") return servir(env, request, "/index.html", "admin");
-      if (p === "/apps.json") return servir(env, request, "/apps.json", "admin");
+      return Response.redirect("https://etika.eus/admin/", 301);
     }
 
     if (p === "/admin") return Response.redirect(new URL("/admin/", url).toString(), 301);
