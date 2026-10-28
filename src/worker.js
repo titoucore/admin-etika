@@ -74,6 +74,10 @@ export default {
       return new Response("Méthode non autorisée.", { status: 405, headers: { Allow: "GET, HEAD" } });
     }
     const url = new URL(request.url);
+    // Une seule adresse canonique : www.etika.eus renvoie vers etika.eus.
+    if (url.hostname === "www.etika.eus") {
+      return Response.redirect(`https://etika.eus${url.pathname}${url.search}`, 301);
+    }
     const p = url.pathname;
 
     // Transition : admin.etika.eus garde exactement son comportement d'avant.
